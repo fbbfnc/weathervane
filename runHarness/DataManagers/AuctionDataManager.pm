@@ -768,7 +768,7 @@ sub cleanData {
 				$workloadNum, " appInstance ",
 				$appInstanceNum
 			);
-			$cmdout = $nosqlService->host->dockerExec($logHandle, $name, "mongo --eval'printjson(db.runCommand({ compact: \"imageFull\" }))' auctionFullImages");
+			$cmdout = $nosqlService->host->dockerExec($logHandle, $name, "mongo --eval 'printjson(db.runCommand({ compact: \"imageFull\" }))' auctionFullImages");
 			print $logHandle $cmdout;
 
 			$logger->debug(
