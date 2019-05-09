@@ -109,6 +109,7 @@ runAndLog( $fileout, "./gradlew clean release" );
 runAndLog( $fileout, "yum install -y wget" );
 runAndLog( $fileout, "yum install -y curl" );
 runAndLog( $fileout, "yum install -y lynx" );
+runAndLog( $fileout, "yum install -y gcc" );
 
 print "Setting up various configuration files.  See autoSetup.log for details\n";
 print $fileout "Setting up various configuration files.  See autoSetup.log for details\n";
@@ -127,6 +128,8 @@ runAndLog( $fileout, "cpanm String::Util" );
 runAndLog( $fileout, "cpanm Statistics::Descriptive" );
 runAndLog( $fileout, "cpanm Moose" );
 runAndLog( $fileout, "service network restart" );
+runAndLog( $fileout, "pgrep dhclient" );
+runAndLog( $fileout, "dhclient" );
 runAndLog( $fileout, "cpanm MooseX::Storage" );
 runAndLog( $fileout, "cpanm Tie::IxHash" );
 runAndLog( $fileout, "cpanm MooseX::ClassAttribute" );
@@ -137,6 +140,8 @@ runAndLog( $fileout, "cpanm Log::Log4perl" );
 runAndLog( $fileout, "cpanm Log::Dispatch::File" );
 runAndLog( $fileout, "cpanm LWP" );
 runAndLog( $fileout, "service network restart" );
+runAndLog( $fileout, "pgrep dhclient" );
+runAndLog( $fileout, "dhclient" );
 
 close $fileout;
 
