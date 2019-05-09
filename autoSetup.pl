@@ -133,6 +133,7 @@ runAndLog( $fileout, "dhclient" );
 runAndLog( $fileout, "cpanm MooseX::Storage" );
 runAndLog( $fileout, "cpanm Tie::IxHash" );
 runAndLog( $fileout, "cpanm MooseX::ClassAttribute" );
+runAndLog( $fileout, "cpanm MooseX::Storage" );
 runAndLog( $fileout, "cpanm MooseX::Types" );
 runAndLog( $fileout, "cpanm JSON" );
 runAndLog( $fileout, "cpanm Switch" );
