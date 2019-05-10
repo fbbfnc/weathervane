@@ -231,6 +231,8 @@ runAndLog( $fileout, "echo \"echo 1048576 > /proc/sys/net/netfilter/nf_conntrack
 runAndLog( $fileout, "echo \"echo 65536 > /sys/module/nf_conntrack/parameters/hashsize\" >>  /etc/rc.d/rc.local" );
 runAndLog( $fileout, "echo \"echo 65536 > /sys/module/nf_conntrack_ipv4/parameters/hashsize\" >>  /etc/rc.d/rc.local" );
 runAndLog( $fileout, "service network restart" );
+runAndLog( $fileout, "pkill dhclient" );
+runAndLog( $fileout, "dhclient" );
 
 runAndLog( $fileout, "cp configFiles/host/$os/*.repo /etc/yum.repos.d/." );
 if ( $os eq "centos7" ) {
@@ -547,6 +549,8 @@ runAndLog( $fileout, "cpanm String::Util" );
 runAndLog( $fileout, "cpanm Statistics::Descriptive" );
 runAndLog( $fileout, "cpanm Moose" );
 runAndLog( $fileout, "service network restart" );
+runAndLog( $fileout, "pkill dhclient" );
+runAndLog( $fileout, "dhclient" );
 runAndLog( $fileout, "cpanm MooseX::Storage" );
 runAndLog( $fileout, "cpanm Tie::IxHash" );
 runAndLog( $fileout, "cpanm MooseX::ClassAttribute" );
@@ -557,6 +561,8 @@ runAndLog( $fileout, "cpanm Log::Log4perl" );
 runAndLog( $fileout, "cpanm Log::Dispatch::File" );
 runAndLog( $fileout, "cpanm LWP" );
 runAndLog( $fileout, "service network restart" );
+runAndLog( $fileout, "pkill dhclient" );
+runAndLog( $fileout, "dhclient" );
 
 print "Installing and configuring nscd\n";
 print $fileout "Installing and configuring nscd\n";
